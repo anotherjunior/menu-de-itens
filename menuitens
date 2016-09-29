@@ -1,0 +1,70 @@
+
+package exerc2;
+
+import java.util.Scanner;
+
+
+
+public class Exerc2 {
+
+   
+    public static void main(String[] args) {
+        Scanner entrada = new Scanner (System.in);
+        
+        // variaveis
+        
+        double n1, n2, res = 0;
+        char menu;
+        String operacao = "";
+        
+        // entrada de dados
+        System.out.println("Escolha M para Média entre os numeros digitados:");
+        System.out.println("Escolha S para a diferença do menor para o maior");
+        System.out.println("Escolha P para produto entre os numeros digitados");
+        System.out.println("Escolha D para Divisão do primeiro pelo segundo");
+        
+        menu = entrada.next().charAt(0);
+        menu = Character.toUpperCase(menu);
+        
+        
+        System.out.println("Digite dois numeros");
+        n1 = entrada.nextDouble();
+        n2 = entrada.nextDouble();
+        
+        switch ( menu ) {
+            case 'M': 
+                
+                operacao = "A Media entre os números digitados é: ";
+                res = ( n1 + n2 ) /2;
+                break;
+                
+            case 'S':
+                operacao = "A diferença do maior pelo menor é: ";
+                if( n1 > n2 ) {
+                    res = n1 - n2;
+                }
+                else {
+                    res = n2 - n1;
+                }
+                break;
+                
+            case 'P':
+                operacao = ("O produto entre dois numeros é: ");
+                res = ( n1 * n2 );
+                break;
+            case 'D':
+                operacao = "A divisão entre o primeiro pelo segundo é: ";
+                res = n1 / n2;
+                break;
+            
+            default:
+                System.out.println("OPERAÇÃO INVÁLIDA");
+        }
+           if ( ! operacao.equals("")){
+               System.out.println( operacao + res );
+           }
+    }
+           
+}
+
+                        
